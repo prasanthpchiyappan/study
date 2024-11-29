@@ -1,0 +1,279 @@
+first install python 
+
+
+1. data types .
+
+
+	int -- a = 10 (auto find for python this is int )
+
+	flat -- b = 0.4 (auto find in python )
+
+	string -- c = " this is new word " ( " " is a string mention )
+
+
+2. data type change .
+
+	
+	a = "10"
+	b = "20"
+	c = a + b
+
+	print (c)  output: 1020 (" " is meaning for string )
+
+	--- solution ---
+	
+	a = int ("10")
+	b = int ("20")
+	c = a + b
+		
+	print (c)  output: 30 ( int using inside off all numbers and don't allow letters)
+
+
+3. if else concept .
+
+
+	if - is condition
+	
+	else - is unsatisfied if condition it will be work
+
+	a = 10
+	if (a=10):
+		print(" this number is ten ")
+	else:
+		print(" this number is not ten ") 
+
+4. what's reminder .
+	
+
+	15 % 3 is a 0.
+		
+		ex: 15/3 is 5*3 =15 reminder is a 0.
+
+	14 % 3 is a 2.
+
+		ex: 15/3 is 4*3 =12 reminder is a 2.
+
+		
+	EX:	a=15
+		if (a % 3 ==0):
+			print(" this number division by 3")
+		else:
+			print(" this number not division by 3 ")
+
+
+5.nested if .
+
+
+	nested if is all condition check and will end the program
+
+
+	mark=35
+
+	if (mark<35):
+
+		print("fail)
+
+	if (mark>=35) & (mark<=70):
+
+		print("pass")
+
+	if (mark>70) & (mark<=100):
+
+		print("excellent")
+
+
+6.elif concept.
+
+
+
+	elif is a when condition will be a true exit the program
+	
+		
+
+	mark=65
+
+	if (mark<35):
+
+		print("fail)
+
+	elif (mark>=35) & (mark<=70):
+
+		print("pass")
+
+	elif (mark>70) & (mark<=100):
+
+		print("excellent")
+
+
+	
+	output= "pass"  my program will be second elif finished and exit 
+
+
+
+7.for loop .
+
+
+	for loop is list loop
+
+	
+	EX: for i in range(1,10):
+		
+		print(i)
+
+
+	EX: count=0
+
+		for x in range(1,10):
+		
+			if(x%2==0):
+		
+				count=count+1
+		print(x)
+
+		---- out put === 4
+
+
+
+8.while loop .
+
+
+
+		
+		while loop is a unknown the end loop will run , 
+		if your error infinity loop .
+
+
+
+		a=1
+
+		while (a>10):
+			print(a)
+			a= a+1
+
+
+		output  :  1 to 9
+
+		
+
+		2. factorial
+		
+		a=3
+
+		fact=1
+
+		while (a>0):
+			fact=fact*a
+			a= a-1
+
+		print(fact)
+
+
+
+
+9. list , tuple , set , dictionary .
+
+
+
+
+		list .
+	
+			1. []  this simple using , it's allow  all type of data
+
+			2. mutable , change and modifying 
+
+			3. it allow for duplicate [1,1,1,2]
+
+		tuple .
+
+			1. ()  this simple using , it's allow all data type
+
+			2. immutable , we can't change and modifying 
+
+			3. it allow for duplicate (1,1,1,2) 
+
+		set .
+
+			1. {}  this simple using , it's allow all data type's
+
+			2. we can't change  and modifying , you can update
+
+			3. it's don't allow for duplicate
+ 		
+
+		Dictionary .
+
+			1. {"name ": "prasanth} this simple using and this type 
+
+			2. modifying the data
+
+			3. don't allow duplicate's
+
+			4. allow all data type's
+	
+
+
+
+
+10. function .
+
+
+		This function using for a all high level program
+
+		
+
+		dif list(a,b):
+
+			for x in range (a,b):
+
+				print(x,end=" ")
+		list(1,10)
+
+
+
+		return -------
+
+	
+			one function inside any value and data here that value is 
+
+			a return to main function called to return function.
+
+
+			
+			u="hacker"
+
+			p="0101"
+
+			u_name=input("enter username  : ")
+
+			password=input("enter password : ")
+
+			def login ():
+		
+				if u==u_name and p==password :
+					
+					return "correct"
+
+				else:
+		
+					return "incorrect"
+
+			print(login())
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

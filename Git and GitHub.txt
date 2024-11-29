@@ -1,0 +1,172 @@
+first install git in your computer
+
+1.web browser to vs code link.
+
+
+		1. open web browser and login GitHub 
+		
+		2. create repositories and create new file
+
+		3. next open VSCODE and open the folder
+
+		4 open the terminal and type ' git clone (GitHub repositories link) '
+
+		
+
+2. VSCODE  to GitHub add a new file.
+
+		
+		1. create a new file and save it
+
+		2. go to terminal and cd repositories name
+
+		3. type ' git add test.txt(file name)'
+
+		4. type ' git commit -m "saved test.txt" '
+
+		5. type ' git push origin main '
+		
+
+			------ create, add, commit, push -----  4steps only
+
+
+3. Modified (or) html file developed file update to GitHub.
+
+
+		1. update and save file 
+
+		2. go to terminal
+
+		3. type ' git add test.txt(file name)'
+
+		4. type ' git commit -m "saved test.txt" '
+
+		5. type ' git push origin main '
+
+			------ go to refresh the GitHub website and check ---
+
+4. vs code in one file deleted and update GitHub.
+
+
+		1. first delete the file
+
+		2. go to terminal
+
+		3. type 'git status' - ( git file status checking)
+
+		4. type ' git add test.txt(file name)'
+
+		5. type ' git commit -m "saved test.txt" '
+
+		6. type ' git push origin main '
+
+5. already GitHub setup and i add a new file in GitHub website and update vs code.
+
+
+		1 . go to terminal 
+
+		2. type 'git pull'  ( GitHub website any changes will be old file also this comment type for vs code )
+
+
+6. vs code new folder add and 2 file uploaded in GitHub website and branch name change.
+
+
+		1. open the new folder
+
+		2. open the two files (main.html , style.css)
+
+		3. go to terminal
+		
+		4. type 'git init '
+
+		5. type 'git add .' ( . meaning for all files)
+
+		6. type 'git commit -m "two file add" '
+
+		7. go to GitHub website and create new repository
+
+		8. copy the link ' git remote add origin https:www.github.com/prasanth/new2.git '
+
+		9. go to vs code terminal
+
+		10. type ' git remote add origin https://github.com/prasanth/new2.git '
+
+		11. type 'git branch ' (change branch name )
+
+		12. type ' git branch -m main '
+
+		13. type ' git push origin main '
+
+		14. go to check GitHub web site 
+
+
+
+7. open new branch and create new file , change the branch , merge the branch.
+
+
+
+		1. open the GitHub website and create branch
+
+		2. All files auto clone the new branch
+
+		3. go to vs code open terminal 
+
+		4. type ' git branch -a '  (show the branch)
+
+		5. type ' git pull '  ( All modified in website update in your vs code )
+
+		6. type 'git checkout new-branch1 ' (change the branch)
+
+		7. create new test1.txt file
+
+		8. update the file ( git add , git commit -m "update", git push origin new-branch1)
+
+		9. go to check website , the file changed in GitHub website
+
+		10. i want my new branch file merge for old main branch
+
+		11. type ' git checkout main '
+
+		12. type ' git merge main '
+
+		13. type ' git push origin main '
+
+		14. the new file merge for main branch
+
+
+8. new branch open by vs code and update GitHub website.
+
+
+		1. open terminal
+
+		2. type ' git branch new-branch4 ' ( this comment new branch open )
+
+		3. type ' git checkout new-branch4 ' ( this comment change the branch )
+
+		4. create a new text file this branch ( newbranch4.txt )
+
+		5. type ' git add . ' and 'git commit -m "new file add" '
+
+		6. type ' git push origin new-branch4 ' ( auto create branch for GitHub website )
+
+
+
+9. pull request.
+
+
+	
+		1. my new-branch3 open a new file 
+
+		2. update the file (add, commit ,push)
+
+		3. go to GitHub website and go to my branch (new-branch4)
+
+		4. go to pull request and create a pull request
+
+		5. main branch compare to your branch add request
+
+		6. go to main branch and go to pull request ( accept the request )
+
+
+
+		
