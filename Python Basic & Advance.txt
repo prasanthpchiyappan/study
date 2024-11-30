@@ -261,19 +261,142 @@ first install python
 			
 
 
+11. class and object .
+
+
+
+	class is bundle of function , variables using.
+
+	object access in class 
+
+
+
+	class laptop:
+
+		price=" "
+
+		def good():
+
+			print("this laptop was good price")
+
+		def bad():
+
+			print(" this laptop was over priced ")
+
+
+	one=laptop.good()
+	two=laptop.bad()
+
+	hp=laptop()
+	asus=laptop()
+
+	hp.price="700000"
+	asus.price="40000"
+
+	print(hp.price,two)
+	print(asus.price,one)
+
+
+
+12.Constructor and self key words .
+
+
+	constructor is __init__ function , this is when i create a object 
+	
+	automatically called a init function , init is python inbuild function
 
 
 
 
+            class laptop:
+                def __init__(self):
+                    self.price=""
+                    self.ram=""
+                def display(self):
+                    print("price",self.price)
+                    print("ram",self.ram)
+
+            hp=laptop()
+            dell=laptop()
+
+            hp.price="50000"
+            hp.ram="8gb"
+
+            dell.price="700000"
+            dell.ram="12gb"
+
+            hp.display()
+
+            dell.display()
 
 
 
+	Examples : 
 
 
 
+            class teacher:
+                def __init__(self,name,reg):
+                    self.name=name
+                    self.reg=reg
+                def display(self):
+                    print("name: ",self.name)
+                    print("reg no: ", self.reg)
+
+            t1=teacher("revathy","21")
+            t2=teacher("charu","32")
+
+            t1.display()
+            t2.display()
 
 
+13.  class variable .
 
 
+		this class variable access to all function 
+
+
+		
+		class phone:
+
+                type="type-c"   ------------ this the class variable --------
+
+                def __init__ (self,brand,value):
+                    self.brand=brand
+                    self.value=value
+
+                def display(self):
+                    print("Brand:",self.brand)
+                    print("value:",self.value)
+                    print("type:",self.type)
+
+            samsung=phone("samsung","700000")
+            iphone=phone("iphone","120000")
+
+            samsung.display()
+            iphone.display()
+
+
+14.  inhertance:
+
+	single inheritance:
+
+		single one class to another class merge
+
+	multi inheritance:
+		
+		i have a class a,b used to --- class c(a,b) ---
+
+	multilevel inheritance:
+
+		i have a class and link to class b and link to class c
+
+		class(a):
+
+		class(b):
+
+		class(C):
+
+		c class access to a class 
 
 
