@@ -400,3 +400,196 @@ first install python
 		c class access to a class 
 
 
+
+15.Encapsulation .
+
+	
+	one public variable to private variable change that's encapsulation
+
+	1. underscore is a public access variable
+	
+	2. single underscore is protector variable (" class and child class accessible" )
+	
+	3. double underscore is a private variable (" only class inside method accessible ")
+
+
+        class company:
+
+            def __init__(self):
+
+                self.__cname="google"   ## __ double underscore is private variable
+
+            def col(self):
+
+                print(self.__cname)
+
+        c1=company()
+
+        c1.col()
+
+
+
+16. Polymorphism .
+
+
+
+		polymorphism is Four type
+
+1.
+
+        def cal(a,b,c=0):
+
+            print(a+b+c)
+                                        # method overloading -- compile time polymorphism
+        cal(10,20,50)
+
+
+
+2.
+
+
+
+        class a1:
+
+            def meth():
+                print("Hello")           # this is method overwriting -- runtime polymorphism
+
+        class a2(a1):
+
+            def meth():
+                print("World")
+
+        b=a2()
+
+        a2.meth()
+
+
+
+
+3. duck typing .
+
+
+
+
+        class duck:
+            def du(self):
+                print("quack")		# this is duck typing 
+
+        class duck1:
+            def du(self):
+                print("quack of ducks")
+
+        def sound(su):
+            su.du()
+
+        a1=duck()
+        a2=duck1()
+
+        sound(a1)
+        sound(a2)
+
+
+
+
+4.  operator overloading .
+
+	
+		two object (add,mul,div,sub)  this function using overload the operator ,
+
+
+
+            # operatoer overloading 
+
+    # ---------  first type
+
+            class theme:
+                def __init__(self,a):		# this is a operator overloading
+
+                    self.a=a
+
+                def __add__ (self,other):
+
+                    self.other=other
+
+                    return obj1.a+other.a
+
+            obj1=theme(10)
+            obj2=theme(20)
+
+            print(" add overloading " , obj1+obj2)
+
+
+    # ---------  second type
+
+            class employee:
+                def __init__(self,name,salary):
+
+                    self.name=name
+                    self.salary=salary
+
+                def __mul__(self,other):
+
+                    self.other=other
+                    return obj1.salary*obj2.days
+
+                
+
+            class payroll:
+                
+                def __init__(self,days):
+
+                    self.days=days
+
+
+            obj1=employee("prasanth",2000)
+            obj2=payroll(28)
+
+
+            print(obj1.name," = Net salary : ",obj1*obj2)
+
+
+
+
+18.exception handling .
+
+		
+		exception handling is a error handling , first try if success run this try block
+
+		if unsuccess run exception block
+
+		
+
+            a=input("enter the number : ")
+            b=input("enter the number : ")
+
+            try:
+                c=a/b           				# this main function
+
+            except ZeroDivisionError:
+
+                print("error:division by zero is not allowed")  # this type of error
+
+            except ValueError:
+
+                print("error:invalid input")   			# this type of error
+
+            except Exception:
+
+                print("error:unknown error")    		# all kind of error 
+
+            else:
+                print("result:",c)      			# no error run this block
+
+            finally:
+                print("thank you")      			# if error (or) not error this finally block run
+
+
+
+
+
+
+
+
+
+
+
