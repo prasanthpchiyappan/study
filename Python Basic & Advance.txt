@@ -406,7 +406,7 @@ first install python
 	
 	one public variable to private variable change that's encapsulation
 
-	1. underscore is a public access variable
+	1. underscore is not a public access variable
 	
 	2. single underscore is protector variable (" class and child class accessible" )
 	
@@ -435,7 +435,7 @@ first install python
 
 		polymorphism is Four type
 
-1.
+1. Method overloading
 
         def cal(a,b,c=0):
 
@@ -445,7 +445,7 @@ first install python
 
 
 
-2.
+2. Method overwriting .
 
 
 
@@ -550,7 +550,7 @@ first install python
 
 
 
-18.exception handling .
+17.exception handling .
 
 		
 		exception handling is a error handling , first try if success run this try block
@@ -582,6 +582,160 @@ first install python
 
             finally:
                 print("thank you")      			# if error (or) not error this finally block run
+
+
+
+
+
+18 . Abstract class 
+
+
+	* you can't create a object for abstract class
+
+	* classes inheriting abstract class must overwriting all abstract method
+
+	* it's using for some general function . EX-- car is " start, stop "
+
+
+
+
+            # abstract class
+
+            from abc import ABC,abstractmethod
+
+            class room(ABC):
+
+                @abstractmethod                  # Decoretor
+                def open():
+                    pass
+
+            class room1(room):
+
+                def open():
+                    print("the room is lock")
+
+
+            class room2(room):
+
+                def open():
+                    print("this room2 class")
+
+
+            obj1=room2.open()
+
+            obj2=room1.open()
+
+
+
+19. module .
+
+
+	* module is imported files and access the working file
+
+
+	* you have a two files one file to another file give an access and use function
+
+	EX----
+
+	1. import email "email is a file name "		--- Recommend for use------
+
+	2. import email as p " p is a alas name "
+
+	3. from email import msg " this is i only access for msg function "
+
+	4. from email import * " this * symbol is all functions access " 
+
+
+20. Iterator .
+
+	
+	one time use this variable memory
+
+	list1=iter([0,20,30,40])
+
+
+21. Generator .
+
+	
+	function given the multiple returns
+
+
+	
+            def open (x,y,z):
+                res1=x+y+z
+                res2=x-y-z
+                res3=x*y*z
+
+                yield res1		---- yield is multiple return -----
+                yield res2
+                yield res3
+
+
+            op=open(10,20,30)
+
+            print(next(op))       ----- next is inbuild function -----
+            print(next(op))
+            print(next(op))	  ----- next use for next return process ----
+
+
+
+22. user define function .
+
+
+	
+	1. require and positional argument	( def pop (x,y,z) )
+
+	2. require and non positional argument	(def pop (x=10, y=20,z=30) )
+
+	3. default argument function		(def pop (x,y,z=10) )
+
+	4. variable length argument function	(def pop (x,y,*z) ) --- *z multiple variable store ---
+
+
+
+
+23. file handling .
+
+
+	* open the file and read
+
+	
+		new=open(r'D:\practice\file.txt','r')  --- open file 
+
+		j=new.read()				-- read file
+
+		new.close()				-- file closed
+
+		print(j)
+	
+
+
+	* overwrite the file
+
+		new = open (r 'D:\practice\file.txt', 'w')
+
+		j=new.write ("new comment")
+
+		j=new . writelines (''' the new line
+					second line ''')
+
+		k=new.read()
+
+		print(k)
+
+	* append the line
+
+		new = open (r 'D:\practice\file.txt', 'a')
+
+		j=new.append ("new comment")
+		
+
+	* with function using file handling
+
+		with open (r 'D:\practice\file.txt','r') as p:
+
+			print(p.read())
+
 
 
 
