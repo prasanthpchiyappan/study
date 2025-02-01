@@ -1,0 +1,527 @@
+
+First create one folder and select this one 
+
+
+
+1. Create Environtment .
+
+	
+	* open cmd and type python --version
+
+	* - python -m venv  ________   -> name  ( python -m venv portfolio)
+
+	* - cd project path andd cd Scripts and Activate (ativate the django)
+
+	* - python -m pip install Django (django install)
+	
+	* - django-admin startproject portfolio (django project create)
+
+	* - cd portfolio (go to project)
+
+	* - python manage.py run server ( django server activate)
+
+
+2. vs code using
+
+
+
+	* vscode new terminal open 
+
+	* - python -m venv portfolio
+
+	* - cd portfolio, cd Scripts , Activate
+	
+	* - python -m pip install Django
+
+	* - cd.. , cd..
+
+	* - django-admin startproject myapp
+
+	* - cd myapp
+
+	* - python 
+
+
+
+3. creating app
+
+	* - python .\manage.py startapp first (create app)
+
+	* go to my app and setting.py folder open 
+
+	* search the INSTALLED _APPS and add 'first' (register the ypur app)
+
+
+4. creating first view
+
+
+	* go to 'first' foloder and select 'views.py'
+
+	*  from django.http import HttpResponse and create one function 
+
+		def index(requst):
+
+  			  return HttpResponse("hi da pundamavaney")
+
+
+	* create one file 'urls.py'
+
+	* inside of urls.py 
+
+
+            from django.urls import path
+            from . import views
+
+            urlpatterns=[
+                path("",views.index,name="index")   ----- response page link
+            ]
+
+
+	* go to myapp urls   (register main file)
+
+
+		add - path("",include("first.urls") ),
+
+
+		add - from django.urls import path , include
+
+
+
+
+5. views & urls .
+
+
+	can you add the extra urls
+
+
+	* first folder inside view file open
+
+	* add a one function      -- add response
+
+		def detail(request):
+    			return HttpResponse("this is detail page")
+
+
+	* go to url file and urlpatterns inside
+
+			path("detail/",views.detail,name="detail"), -- add urls
+
+
+		
+	
+6. dynamic urls.
+
+
+
+	* first folder inside url file open 
+
+	* - path("detail/<str:post_id>",views.detail,name="detail"),
+
+	* detail next <> inside int,str inset is dynamic
+
+	* view file 
+
+		def detail(request,post_id):
+    			return HttpResponse(f"this is detail page{post_id}")
+
+
+7. redirect url .
+
+
+
+
+		* go to views file 
+
+
+		from django.shortcuts import render, redirect  ---(import redirect )		
+
+
+		def oldurl(request):
+    			return redirect("newurl")        --- you call oldurl request get new url response
+
+		def newurl(request):
+    			return HttpResponse("This is new url")
+
+
+		* go to url file
+
+
+			path("newurl",views.newurl,name="newurl"), --- connect old url to new url 
+
+    			path("oldurl",views.oldurl,name="oldurl"),
+
+
+
+8.reverse and named urls
+
+
+
+
+
+		* go to url file open
+
+
+
+		app_name='first'		--- add the variable
+
+			urlpatterns=[
+    				path("",views.index,name="index"),
+    				path("detail/<str:post_id>",views.detail,name="detail"),
+    				path("New_server_url",views.newurl,name="newpageurl"),        ---- name change
+    				path("oldurl",views.oldurl,name="oldurl"),
+					]
+
+
+		* go to views file 
+
+
+
+			* -  from django.urls import reverse  		--- import function
+
+		
+			* def oldurl(request):
+   				 return redirect(reverse('first:newpageurl'))	
+
+
+			
+			* redirect function inside reverse function use 
+
+				first is my variable inside of url name enter 
+
+
+			* future time do you change the url name is help 
+
+
+9.html page implement.
+
+
+
+
+		* first folder inside templates folder create inside blog folder create
+
+		* blog folder inside 'index.html' file create 
+
+		* go to view.py 
+
+			def index(request):
+    				return render(request,'blog/index.html') -- request render and reponse
+
+
+
+
+10.static files .
+
+
+
+		* first folder inside static folder create ,create blog folder
+
+		* blog inside 'style.css' file create 
+
+
+		* go to html file 
+
+			file top {%load static%} type    -- load the static file 
+
+			file inside of <link rel="stylesheet" href="{%static 'blog/style.css'%}">   
+
+			change static file inside style file there
+	
+		* go to myapp folder and open setting.py
+
+		* STATIC_URL down side write
+
+			STATICFILES_DIRS=[
+   				 "/first/static/blog"
+				]
+
+
+		
+11. creaing template .
+
+
+
+	
+	* common header and footer 
+
+	* first folder -> templates -> blog inside
+
+	* create base.html
+
+	* base.html inside ( index.html header and footer common copy and paste )
+
+	* next header and footer center 
+
+		{% block content %}
+
+     		{% endblock %}
+
+	* next go to index.html
+
+	* clear header and footer
+
+		file top {% extends 'blog/base.html' %}
+	
+		dynamic content .
+
+			top - {% block content %}
+
+			end - {% endblock %}
+
+
+
+	* go to detail.html 
+
+	* clear header and footer
+
+		file top {% extends 'blog/base.html' %}
+	
+		dynamic content .
+
+			top - {% block content %}
+
+			end - {% endblock %}
+
+
+
+		same like all dynamic content file this method as work on it.
+
+
+
+12. include  partial template .
+
+	
+		include partial template using for separate header and footer in html
+
+
+
+	* first -> templates -> blog -> create includes folder
+
+	* include folder inside of ' header.html ' and ' footer.html ' two file create
+
+	* go to ' base.html '
+
+	* header part cut and paste in ' header.html '
+
+	* footer part cut and paste in ' footer.html '
+
+	* ' base.html ' body tag inside 
+
+		
+    		<!-- header-->		-( header part replace this command)
+
+    		{% include 'blog/includes/header.html' %}
+
+
+
+     		<!--footer-->       - ( footer part replace this command )
+
+     		{% include 'blog/includes/footer.html' %}
+
+
+
+13.variable interpolation.
+
+	variable interpolation is main html page inside tittle dynamic change
+
+
+	* first folder -> views.py
+
+	* 	def index(request):
+
+    			tittle='Latest Posts'  -- this variable was dynamic
+ 
+    			return render(request,'blog/index.html',{'tittle':tittle})
+
+	* go to templates -> blog -> index.html
+
+
+		search tittle h2 tag and 		
+
+			<h2 >{{tittle}}</h2>  -- link it variable
+
+
+	* go to base.html file 
+
+		<title>{{tittle}}</title>	-- {{tittle}} variable
+
+
+		where you dynamic content using this variable using
+
+
+
+
+
+14. filters.
+
+
+
+	* variable filter 
+
+		1.<title>{{tittle | upper}}</title>
+
+		2.<title>{{tittle | lenth}}</title>
+
+		3.<title>{{tittle | default:"Document"}}</title> 
+		
+		 ---- (tittle return page tittle show and non tittle return page default document return )
+
+
+
+
+15. vs code Extension add.
+
+	
+	* go to Extension search "Django" and install
+
+
+
+16. For Tag.
+
+
+
+
+
+	multiple weigets control for tag
+
+
+	* go to first folder-> views.py
+
+
+		* add one variable for 'index' function inside
+
+
+                   def index(request):
+                        tittle='Latest Posts'
+                        posts=[
+                            {'tittle':'post1','content':'this post activate of 1'},  --- this variable add
+                            {'tittle':'post2','content':'this post activate of 2'},
+                            {'tittle':'post3','content':'this post activate of 3'},
+                            {'tittle':'post4','content':'this post activate of 4'},
+                        ]
+
+                   return render(request,'blog/index.html',{'tittle':tittle,'posts':posts})   --- return post variable
+
+
+
+
+		* go to index.html
+
+
+			1.select  the col tag and all tag delete
+
+			2. tag top side - {% for post in posts %}
+
+			3. tag bottom side - {% endfor $}
+
+			4. change the dynamic tittle and paragraph
+
+			5. tittle tag inside -  {{post.tittle}}
+
+			6. post text tag inside -  {{post.content}}
+
+
+17. if tag .
+
+
+		if tag is same like a python if else concept
+
+	
+		 * go to index.html
+
+
+			1. for tag top side - {%if posts%}
+
+			2. for tag bottom side - {% endif %}
+			
+			3. two if tag inside - {% else %}
+
+
+				else tag using for if is a true run this code,
+
+				if not there run as a else code
+
+	
+18. URL and Dynamic URL.
+
+
+
+		
+		two type of url is here
+
+		1.direct url 
+
+		2.dynamic url ( url tag using dynamic )
+
+
+	* First id set 
+
+		go to first folder -> views.py
+
+                def index(request):
+                    tittle='Latest Posts'
+                    posts=[
+                        {'id':1,'tittle':'post1','content':'this post activate of 1'},		-- enter id 
+                        {'id':2,'tittle':'post2','content':'this post activate of 2'},
+                        {'id':3,'tittle':'post3','content':'this post activate of 3'},
+                        {'id':4,'tittle':'post4','content':'this post activate of 4'},
+                    ]
+
+                    return render(request,'blog/index.html',{'tittle':tittle,'posts':posts})
+
+
+
+
+	
+	* Direct URL
+		
+		1. go to first -> template-> blog ->
+
+		2. open index.html
+
+		3. <a href="/part/detail/{{post.id}}">Read More</a>  ( change the href link )
+
+
+	* Dynamic and URL tag using
+
+		
+		1. go to index.html
+
+		2. <a href={% url 'first:post' post_id=post.id %}>Read More</a>
+
+			* 'first:post' - views.py in app name is first 
+
+			* 'first:post' - urls.py in path name is post
+
+			* 'post_id=post.id' - urls.py in post_id and index.html post.id
+		
+
+
+
+19. custom 404 error .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
